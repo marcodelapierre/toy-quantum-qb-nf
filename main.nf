@@ -1,6 +1,7 @@
 #!/usr/bin/env nextflow
 nextflow.enable.dsl=2
 
+params.svdcutoff = '0.1,0.01,0.001,0.0001,0.00001'
 
 process sweepSvdCutoff {
     debug false
@@ -39,6 +40,7 @@ process sweepSvdCutoff {
     }
 
     '''
+
     tqb.run()
     print("SVD cutoff: ", tqb.svd_cutoff[0][0][0])
     print(tqb.out_raw[0][0])
@@ -46,5 +48,7 @@ process sweepSvdCutoff {
 }
 
 workflow {
-  channel.of(0.1, 0.01, 0.001, 0.0001, 0.00001) | sweepSvdCutoff | view
+    input = Channel.fromList( params.svdcutoff.tokenize(',') )
+
+    input | sweepSvdCutoff | view
 }
