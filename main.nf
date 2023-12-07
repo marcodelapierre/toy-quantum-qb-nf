@@ -43,7 +43,7 @@ process sweepSvdCutoff {
     print("SVD cutoff: ", tqb.svd_cutoff[0][0][0])
     print(tqb.out_raw[0][0])
     """
-
+}
 
 workflow {
   channel.of(0.1, 0.01, 0.001, 0.0001, 0.00001) | sweepSvdCutoff | view
