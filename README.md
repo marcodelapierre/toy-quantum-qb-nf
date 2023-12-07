@@ -6,7 +6,7 @@ Qristal is preferably deployed using containers, so by default the Docker contai
 
 Give it a go with the parameter sweep example (SVD cutoff):
 ```
-nextflow run main.nf
+nextflow run marcodelapierre/toy-quantum-qb-nf
 ```
 
 The second example is still a WORK IN PROGRESS. Hold on :-)
