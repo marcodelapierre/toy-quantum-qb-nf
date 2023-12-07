@@ -9,3 +9,4 @@ Give it a go with the parameter sweep example (SVD cutoff):
 nextflow run main.nf
 ```
 
+The second example is still a WORK IN PROGRESS. Hold on :-)
